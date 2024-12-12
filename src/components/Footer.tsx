@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <div className="mt-10 mx-10 md:mx-20 text-xl font-semibold font-inter">
       <div className="text-4xl text-center md:text-left leading-none md:text-7xl font-bold">
-        KOLAWOLE JOSHUA <br />
-        WEB DEVELOPER
+        GOSPEL CHINYEREUGO <br />
+        SOFTWARE ENG.
       </div>
       <div className="grid grid-cold-1 text-center md:grid-cols-3 mt-10 mb-20 items-center gap-5">
         <div className="flex justify-center md:justify-normal gap-5">
@@ -14,7 +14,7 @@ const Footer = () => {
             <Link
               target="_blank"
               rel="noreferrer"
-              href="https://www.linkedin.com/in/kolawole-ayoola-264118186/"
+              href="https://www.linkedin.com/in/gospel-chinyereugo/"
             >
               Linkedin
             </Link>
@@ -24,7 +24,7 @@ const Footer = () => {
             <Link
               target="_blank"
               rel="noreferrer"
-              href="https://github.com/Kolajosh"
+              href="https://github.com/Ebugo"
             >
               Github
             </Link>
@@ -34,7 +34,7 @@ const Footer = () => {
             <Link
               target="_blank"
               rel="noreferrer"
-              href="https://twitter.com/josh_kolawole"
+              href="https://twitter.com/Codebug_"
             >
               Twitter
             </Link>
@@ -44,9 +44,9 @@ const Footer = () => {
             <Link
               target="_blank"
               rel="noreferrer"
-              href="https://medium.com/@kjosh344"
+              href="https://gospelchinyereugo.hashnode.dev/"
             >
-              Medium
+              Blog
             </Link>
             <span className="absolute bottom-0 left-0 w-full h-[0.50px] bg-black transform origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
           </div>
@@ -60,7 +60,7 @@ const Footer = () => {
 
         <div className="md:text-right">
           <div className="text-xl font-medium cursor-pointer relative inline-block group">
-            <div>KJ®</div>
+            <div>GC®</div>
           </div>
         </div>
       </div>

@@ -1,14 +1,18 @@
 export const services = [
   {
-    name: "Web Design",
-    desc: "Specialize in crafting visually appealing and user-friendly websites tailored to your unique brand and goals.",
+    name: "Web Development",
+    desc: "I build responsive web applications using modern web technologies such as HTML/CSS (Tailiwnd, Material ui, Radix), React (CRA + Next.js + Vite frameworks) and NodeJS/ Express/ MongoDb/ Postgres. In short, anything JavaScript/Typescript, Web2 or Web3!",
   },
   {
-    name: "UI Design",
-    desc: "A well-crafted user interface is the key to exceptional user experiences. Our UI design services are dedicated to enhancing the usability and visual appeal of your digital products.",
+    name: "Team Management",
+    desc: "I have the leadership skills for managing a software team, in the past years I have handled different teams and that has broadened my experience as a Software Engineer, this has enabled me to mitigate unforeseen errors.",
   },
   {
-    name: "Web3 Implementation",
-    desc: "Web3 implementation services specialize in integrating smart contracts and blockchain capabilities into your web applications. Whether it's for decentralized finance (DeFi), non-fungible tokens (NFTs), or custom blockchain solutions, we've got the expertise to make it happen. Elevate your web app with the power of blockchain technology.",
+    name: "Community Building / Public Speaking",
+    desc: "I have 4yrs+ of experience as a Google Developer Groups community (GDG Owerri) lead organizer. I find fulfillment in community building and growth. I also derive joy in speaking at events about select topics.",
+  },
+  {
+    name: "Other Specialties",
+    desc: "I also have some amount of knowledge in some other skill-set, such as: Git Control, Linux, NGINX, Database Design (MongoDB, Postgresql). I use them a lot in my daily task and it has made my workflow better and faster.",
   },
 ];

@@ -2,15 +2,14 @@ import Link from "next/link";
 import React from "react";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
 import Image from "next/image";
-import Logo from "@/assets/imgs/logo.png";
 
 const Navbar = () => {
   return (
     <div className="mt-10 mx-10 md:mx-20 flex items-center text-xl justify-between font-semibold font-inter">
       <div className="font-semibold  text-xl  ">
         <Link className="flex items-center gap-3" href="/">
-          <Image src={Logo} width={50} alt="logo" />
-          <span className="hidden md:block">Kolawole J</span>
+          <Image src="/imgs/headshot_rd.png" width={50} height={50} alt="logo" />
+          <span className="hidden md:block">Gospel C.</span>
         </Link>
       </div>
       <div className="">
@@ -33,7 +32,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="font-medium hidden cursor-pointer relative md:inline-block group">
-        kjosh344@gmail.com
+        gospelokpara@gmail.com
         <span className="absolute bottom-0 left-0 w-full h-[0.50px] bg-black transform origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></span>
       </div>
     </div>

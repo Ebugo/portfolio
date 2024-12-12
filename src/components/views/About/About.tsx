@@ -1,10 +1,10 @@
 "use client";
 import Wrapper from "@/components/Wrapper";
-import hero from "@/assets/imgs/hero.jpg";
 import { services } from "./constants";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 type Service = {
   name: string;
@@ -23,7 +23,7 @@ const About = () => {
             transition={{ duration: 1 }}
             className="text-4xl leading-none md:text-7xl font-bold"
           >
-            WEB, ANIME <br />& NETWORKING
+            WEB, COMMUNITY <br />& TEAM MANAGEMENT
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 0 }}
@@ -49,9 +49,11 @@ const About = () => {
             className="w-full"
           >
             <Image
-              className="object-cover h-[500px] rounded-xl w-full"
-              src={hero}
+              className="object-cover rounded-xl w-full"
+              src="/imgs/hero.jpeg"
               alt="hero"
+              width={500}
+              height={500}
             />
           </motion.div>
         </div>
@@ -70,12 +72,12 @@ const About = () => {
             </div>
             <div>
               <button className="relative font-medium py-5 px-10 border-black border rounded-full text-xl overflow-hidden group">
-                kjosh344@gmail.com
+                gospelokpara@gmail.com
                 <span className="absolute bottom-0 left-0 w-full flex flex-col justify-center h-full bg-black text-white text-center transition-all duration-500 transform translate-y-full opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
                   <Link
                     target="_blank"
                     rel="noreferrer"
-                    href="mailto:kjosh344@gmail.com"
+                    href="mailto:gospelokpara@gmail.com"
                   >
                     Let's Connect
                   </Link>
@@ -86,7 +88,7 @@ const About = () => {
           <hr className="border mt-20" />
           <div className="mt-20">
             {services?.map((data: Service, index: number) => (
-              <>
+              <React.Fragment key={index}>
                 <div
                   key={index}
                   className="grid grid-cols-1 md:grid-cols-3 font-inter"
@@ -102,7 +104,7 @@ const About = () => {
                   </div>
                 </div>
                 <hr className="my-20" />
-              </>
+              </React.Fragment>
             ))}
           </div>
         </motion.div>

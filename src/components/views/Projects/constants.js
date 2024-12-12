@@ -1,10 +1,92 @@
-import demo from "@/assets/imgs/demo.jpeg";
-
 export const works = [
   {
-    name: "Demo",
-    desc: "Demo",
-    img: demo,
-    url: "",
+    name: "Outpost Health",
+    desc: "Healthcare without Boundaries",
+    img: "/imgs/hero.jpeg",
+    url: "https://outpost.health/",
+  },
+  {
+    name: "Neo Carefund",
+    desc: "A supportive community that helps raise funds for individuals with healthcare needs.",
+    img: "/imgs/hero.jpeg",
+    url: "https://carefund.neo.health/",
+  },
+  {
+    name: "Neo Carespaces",
+    desc: "A safe space to discuss health.",
+    img: "/imgs/hero.jpeg",
+    url: "https://carespaces.neo.health/",
+  },
+  {
+    name: "Nkowaokwu",
+    desc: "Search and learn Igbo words in different dialects for free",
+    img: "/imgs/hero.jpeg",
+    url: "https://nkowaokwu.com/",
+  },
+  {
+    name: "BlockchainHub Africa",
+    desc: "Advancing Web3 adoption through talent acceleration and innovative blockchain-based solutions in Africa.",
+    img: "/imgs/hero.jpeg",
+    url: "https://blockchainhub.africa/",
+  },
+  {
+    name: "Sifuse",
+    desc: "Connecting Start-ups with Investors",
+    img: "/imgs/hero.jpeg",
+    url: "https://sifuse.com/",
+  },
+  {
+    name: "Keeway",
+    desc: "Simplifying Borderless Transactions.",
+    img: "/imgs/hero.jpeg",
+    url: "https://keeway.io/",
+  },
+  {
+    name: "Nuthoop",
+    desc: "This is a web app that seeks to improve the nutritional content of food being sold to the people of Lagos, Nigeria.",
+    img: "/imgs/hero.jpeg",
+    url: "https://nuthoop.com/",
+  },
+  {
+    name: "ScoutBallers",
+    desc: "A platform that connects Players, Scouts / Agents, Club Managers and Students to each other.",
+    img: "/imgs/hero.jpeg",
+    url: "https://www.scoutballers.com/",
+  },
+  {
+    name: "Ricive Waitlist",
+    desc: "Wailist web app for Ricive.com",
+    img: "/imgs/hero.jpeg",
+    url: "https://www.tryricive.com/",
+  },
+  {
+    name: "Ricive",
+    desc: "A web app that helps you create a world where you never leave your home for groceries or worry over getting laundry done.",
+    img: "/imgs/hero.jpeg",
+    url: "https://ricive-v4.vercel.app/",
+  },
+  {
+    name: "Kobobid",
+    desc: "A fast-paced bidding website where you can win and purchase some of your favorite, AUTHENTIC items for as little as ONE Kobo by bidding.",
+    img: "/imgs/hero.jpeg",
+    url: "https://kobobid.com/",
+  },
+  {
+    name: "NFT Africa",
+    desc: "NFT Africa",
+    img: "/imgs/hero.jpeg",
+    url: "https://nftafrica.vercel.app/",
+  },
+  {
+    name: "Sonr Learn",
+    desc: "Learn how to build in a true Decentralized Web.",
+    img: "/imgs/hero.jpeg",
+    url: "https://sonr-learn.vercel.app/",
+  },
+  {
+    name: "Client Checkout App",
+    desc: "Simplifying Checkout Experience",
+    img: "/imgs/hero.jpeg",
+    url: "https://client-checkout.vercel.app/",
   },
 ];

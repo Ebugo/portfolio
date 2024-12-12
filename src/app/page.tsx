@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import Home from "@/components/views/Home/Home";
 
 export const metadata: Metadata = {
-  title: "Kolawole Joshua - Web Developer",
+  title: "Gospel Chinyereugo - Software Engineer",
+
   description:
     "Building things that matter, I help brands worldwide elevate their digital presence.",
 };

@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-
 const Projects = () => {
   return (
     <div>
@@ -40,12 +39,14 @@ const Projects = () => {
 
         {/* works */}
         {works?.map((item, index) => (
-          <div className="mb-20 mx-10 md:mx-20">
+          <div className="mb-20 mx-10 md:mx-20" key={index}>
             <div className="w-full relative text-left md:text-center">
               <Image
-                className="object-cover h-[500px] rounded-xl w-full"
+                className="object-cover rounded-xl w-full"
                 src={item?.img}
                 alt="hero"
+                width={500}
+                height={320}
               />
               <div className="absolute inset-0 flex flex-col gap-5 items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-60 text-white rounded-xl">
                 <div className="text-2xl px-5 md:text-6xl font-bold">

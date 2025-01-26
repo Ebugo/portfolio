@@ -1,5 +1,17 @@
 export const works = [
   {
+    name: "BlockchainHub Africa",
+    desc: "Advancing Web3 adoption through talent acceleration and innovative blockchain-based solutions in Africa.",
+    img: "/imgs/hero.jpeg",
+    url: "https://blockchainhub.africa/",
+  },
+  {
+    name: "Nkowaokwu",
+    desc: "Search and learn Igbo words in different dialects for free",
+    img: "/imgs/hero.jpeg",
+    url: "https://nkowaokwu.com/",
+  },
+  {
     name: "Outpost Health",
     desc: "Healthcare without Boundaries",
     img: "/imgs/hero.jpeg",
@@ -16,18 +28,6 @@ export const works = [
     desc: "A safe space to discuss health.",
     img: "/imgs/hero.jpeg",
     url: "https://carespaces.neo.health/",
-  },
-  {
-    name: "Nkowaokwu",
-    desc: "Search and learn Igbo words in different dialects for free",
-    img: "/imgs/hero.jpeg",
-    url: "https://nkowaokwu.com/",
-  },
-  {
-    name: "BlockchainHub Africa",
-    desc: "Advancing Web3 adoption through talent acceleration and innovative blockchain-based solutions in Africa.",
-    img: "/imgs/hero.jpeg",
-    url: "https://blockchainhub.africa/",
   },
   {
     name: "Sifuse",

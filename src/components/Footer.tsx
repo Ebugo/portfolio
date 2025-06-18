@@ -44,7 +44,7 @@ const Footer = () => {
             <Link
               target="_blank"
               rel="noreferrer"
-              href="https://gospelchinyereugo.hashnode.dev/"
+              href="https://blog.ebugo.me/"
             >
               Blog
             </Link>

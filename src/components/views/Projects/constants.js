@@ -33,7 +33,7 @@ export const works = [
     name: "Sifuse",
     desc: "Connecting Start-ups with Investors",
     img: "/imgs/hero.jpeg",
-    url: "https://sifuse.com/",
+    url: "https://www.sifuse.com/",
   },
   {
     name: "Keeway",

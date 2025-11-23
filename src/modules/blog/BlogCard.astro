@@ -1,0 +1,31 @@
+---
+import Card from "@modules/core/Card.astro";
+import type { BlogProps } from "@types";
+
+interface Props {
+  post: BlogProps;
+}
+
+const { post } = Astro.props;
+---
+
+<Card href={post.link} class="group h-full flex flex-col bg-surface/50 hover:bg-surface">
+  <div class="mb-4">
+    <span class="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+      {post.date}
+    </span>
+  </div>
+  
+  <h3 class="text-xl md:text-2xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">
+    {post.title}
+  </h3>
+  
+  <p class="text-text-muted leading-relaxed mb-4 flex-grow text-sm line-clamp-3">
+    {post.summary}
+  </p>
+  
+  <div class="flex items-center gap-2 text-sm font-medium text-text-main mt-auto group-hover:text-primary transition-colors">
+    Read Article
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </div>
+</Card>

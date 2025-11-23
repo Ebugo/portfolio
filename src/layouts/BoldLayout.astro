@@ -1,0 +1,351 @@
+---
+import "@fontsource/inter";
+import "@fontsource/space-grotesk";
+import { SITE_CONFIG } from "@config";
+
+const {
+  title,
+  description,
+  lang,
+  author,
+  socialImage,
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+} = SITE_CONFIG;
+
+const ogImgUrl = canonicalURL + socialImage;
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImgUrl} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImgUrl} />
+
+    <!-- Theme Initialization (Prevent FOUC) -->
+    <script is:inline>
+      // Check for saved theme preference or default to 'dark'
+      const theme = localStorage.getItem("theme") || "dark";
+      if (theme === "light") {
+        document.documentElement.classList.add("light");
+      }
+    </script>
+  </head>
+  <body
+    class="relative overflow-x-hidden bg-background font-sans text-text-main antialiased selection:bg-primary selection:text-white"
+  >
+    <!-- Noise Overlay -->
+    <div
+      class="pointer-events-none fixed inset-0 z-50 opacity-[0.03] mix-blend-overlay"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%221%22/%3E%3C/svg%3E');"
+    >
+    </div>
+
+    <!-- Top Right Navigation -->
+    <!-- Mobile: Home + Theme Toggle + Hamburger -->
+    <div class="fixed top-6 right-6 z-50 flex items-center gap-3 md:hidden">
+      <!-- Home Icon (Mobile) -->
+      <a
+        href="/"
+        class="rounded-full border border-white/10 bg-surface/30 p-3 shadow-lg backdrop-blur-md transition-colors hover:text-primary"
+        aria-label="Home"
+      >
+        <svg
+          class="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+          ></path>
+        </svg>
+      </a>
+
+      <!-- Theme Toggle (Mobile) -->
+      <button
+        id="theme-toggle-mobile"
+        class="rounded-full border border-white/10 bg-surface/30 p-3 shadow-lg backdrop-blur-md transition-colors hover:text-primary"
+        aria-label="Toggle theme"
+      >
+        <svg
+          id="sun-icon-mobile"
+          class="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
+        </svg>
+        <svg
+          id="moon-icon-mobile"
+          class="hidden h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Hamburger Button -->
+      <button
+        id="menu-toggle"
+        class="rounded-full border border-white/10 bg-surface/30 p-3 shadow-lg backdrop-blur-md transition-colors hover:text-primary"
+        aria-label="Toggle menu"
+      >
+        <svg
+          id="hamburger-icon"
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          id="close-icon"
+          class="hidden h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-40 translate-x-full bg-background/95 backdrop-blur-lg transition-transform duration-300 ease-out md:hidden"
+    >
+      <nav
+        class="flex h-full flex-col items-center justify-center gap-8 text-2xl font-bold tracking-wide uppercase"
+      >
+        <a href="/projects" class="transition-colors hover:text-primary">Work</a
+        >
+        <a href="/community" class="transition-colors hover:text-primary"
+          >Community</a
+        >
+        <a href="/#about" class="transition-colors hover:text-primary"
+          >Contact Me</a
+        >
+      </nav>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav
+      class="fixed top-6 right-6 z-40 hidden items-center gap-6 rounded-full border border-white/10 bg-surface/30 p-4 text-sm font-bold tracking-wide uppercase shadow-lg backdrop-blur-md md:top-8 md:right-8 md:flex md:gap-12 md:px-8 md:py-4 md:text-base"
+    >
+      <a
+        href="/"
+        class="flex items-center gap-2 transition-colors hover:text-primary"
+        aria-label="Home"
+      >
+        <svg
+          class="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+          ></path>
+        </svg>
+      </a>
+      <a href="/projects" class="transition-colors hover:text-primary">Work</a>
+      <a href="/community" class="transition-colors hover:text-primary"
+        >Community</a
+      >
+      <a href="/#about" class="transition-colors hover:text-primary"
+        >Contact Me</a
+      >
+
+      <!-- Theme Toggle (Desktop) -->
+      <button
+        id="theme-toggle-desktop"
+        class="p-2 transition-colors hover:text-primary"
+        aria-label="Toggle theme"
+      >
+        <svg
+          id="sun-icon-desktop"
+          class="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
+        </svg>
+        <svg
+          id="moon-icon-desktop"
+          class="hidden h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          ></path>
+        </svg>
+      </button>
+    </nav>
+
+    <main class="min-h-screen w-full">
+      <slot />
+    </main>
+
+    <script>
+      // Scroll Reveal Observer
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      }, observerOptions);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const revealElements = document.querySelectorAll(
+          ".reveal-on-scroll, .reveal-group",
+        );
+        revealElements.forEach((el) => observer.observe(el));
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const closeIcon = document.getElementById("close-icon");
+
+        menuToggle?.addEventListener("click", () => {
+          const isOpen = !mobileMenu?.classList.contains("translate-x-full");
+
+          if (isOpen) {
+            // Close menu
+            mobileMenu?.classList.add("translate-x-full");
+            hamburgerIcon?.classList.remove("hidden");
+            closeIcon?.classList.add("hidden");
+          } else {
+            // Open menu
+            mobileMenu?.classList.remove("translate-x-full");
+            hamburgerIcon?.classList.add("hidden");
+            closeIcon?.classList.remove("hidden");
+          }
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileMenuLinks = mobileMenu?.querySelectorAll("a");
+        mobileMenuLinks?.forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu?.classList.add("translate-x-full");
+            hamburgerIcon?.classList.remove("hidden");
+            closeIcon?.classList.add("hidden");
+          });
+        });
+
+        // Theme Toggle Logic
+        const html = document.documentElement;
+
+        // Get all theme toggle elements
+        const themeToggleMobile = document.getElementById(
+          "theme-toggle-mobile",
+        );
+        const themeToggleDesktop = document.getElementById(
+          "theme-toggle-desktop",
+        );
+        const sunIconMobile = document.getElementById("sun-icon-mobile");
+        const moonIconMobile = document.getElementById("moon-icon-mobile");
+        const sunIconDesktop = document.getElementById("sun-icon-desktop");
+        const moonIconDesktop = document.getElementById("moon-icon-desktop");
+
+        // Update icon visibility based on current theme
+        function updateIcons() {
+          if (html.classList.contains("light")) {
+            sunIconMobile?.classList.add("hidden");
+            moonIconMobile?.classList.remove("hidden");
+            sunIconDesktop?.classList.add("hidden");
+            moonIconDesktop?.classList.remove("hidden");
+          } else {
+            sunIconMobile?.classList.remove("hidden");
+            moonIconMobile?.classList.add("hidden");
+            sunIconDesktop?.classList.remove("hidden");
+            moonIconDesktop?.classList.add("hidden");
+          }
+        }
+
+        // Initialize icons on page load
+        updateIcons();
+
+        // Toggle theme function
+        function toggleTheme() {
+          html.classList.toggle("light");
+
+          // Save preference to localStorage
+          const newTheme = html.classList.contains("light") ? "light" : "dark";
+          localStorage.setItem("theme", newTheme);
+
+          // Update icons
+          updateIcons();
+        }
+
+        // Add event listeners to both toggle buttons
+        themeToggleMobile?.addEventListener("click", toggleTheme);
+        themeToggleDesktop?.addEventListener("click", toggleTheme);
+      });
+    </script>
+  </body>
+</html>

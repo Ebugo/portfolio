@@ -1,0 +1,85 @@
+---
+import Section from "@modules/core/Section.astro";
+import { SITE_CONTENT } from "@config";
+
+const { experience } = SITE_CONTENT;
+---
+
+<Section id="experience" class="py-32">
+  <div class="mb-24 reveal-on-scroll">
+    <h2 class="font-display font-bold text-[10vw] md:text-[8vw] leading-[0.9] tracking-tighter text-text-main">
+      Experience.
+    </h2>
+  </div>
+
+  <div class="flex flex-col" id="experience-accordion">
+    {
+      experience.map((role, index) => (
+        <div class="group relative border-t border-white/10 transition-all duration-500 hover:bg-white/5 reveal-on-scroll accordion-item cursor-pointer" style={`transition-delay: ${index * 100}ms`}>
+          <div class="accordion-trigger flex flex-col md:flex-row md:items-baseline justify-between gap-4 md:gap-12 relative z-10 px-4 md:px-8 py-12">
+            <h3 class="font-display font-bold text-4xl md:text-6xl text-text-main group-hover:text-primary transition-colors duration-300">
+              {role.company}
+            </h3>
+            
+            <div class="flex flex-col md:items-end">
+              <span class="text-xl md:text-2xl font-medium text-text-main mb-1">
+                {role.position}
+              </span>
+              <span class="text-sm md:text-base text-text-muted uppercase tracking-wider font-mono">
+                {role.startDate} — {role.endDate}
+              </span>
+            </div>
+          </div>
+          
+          <!-- Description -->
+          <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 px-4 md:px-8">
+            <div class="pb-12 max-w-3xl">
+              <ul class="space-y-4 text-text-muted text-lg font-light">
+                {typeof role.summary === 'string' ? (
+                  <li>{role.summary}</li>
+                ) : (
+                  role.summary.map((item) => (
+                    <li class="flex items-start gap-3">
+                      <span class="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                      <span>{item}</span>
+                    </li>
+                  ))
+                )}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+    <div class="border-t border-white/10"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const accordionItems = document.querySelectorAll('.accordion-item');
+
+      accordionItems.forEach(item => {
+        const trigger = item.querySelector('.accordion-trigger');
+        const content = item.querySelector('.accordion-content');
+
+        trigger?.addEventListener('click', () => {
+          // Close other items
+          accordionItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('is-active');
+              const otherContent = otherItem.querySelector('.accordion-content') as HTMLElement;
+              if (otherContent) otherContent.style.maxHeight = '0px';
+            }
+          });
+
+          // Toggle current item
+          item.classList.toggle('is-active');
+          if (item.classList.contains('is-active')) {
+            (content as HTMLElement).style.maxHeight = (content as HTMLElement).scrollHeight + 'px';
+          } else {
+            (content as HTMLElement).style.maxHeight = '0px';
+          }
+        });
+      });
+    });
+  </script>

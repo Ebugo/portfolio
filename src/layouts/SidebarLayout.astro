@@ -1,0 +1,49 @@
+---
+import Sidebar from "@modules/core/Sidebar.astro";
+import "@fontsource/inter";
+import "@fontsource/space-grotesk";
+import { SITE_CONFIG } from "@config";
+
+const {
+  title,
+  description,
+  lang,
+  author,
+  socialImage,
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+} = SITE_CONFIG;
+
+const ogImgUrl = canonicalURL + socialImage;
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImgUrl} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImgUrl} />
+  </head>
+  <body
+    class="bg-background font-sans text-text-main antialiased selection:bg-primary selection:text-white"
+  >
+    <Sidebar />
+    <main class="mx-auto min-h-screen max-w-7xl p-6 md:ml-80 md:p-12 lg:p-20">
+      <slot />
+    </main>
+  </body>
+</html>

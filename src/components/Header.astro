@@ -1,0 +1,93 @@
+---
+import Menu from "@icons/Menu.astro";
+import { Image } from "astro:assets";
+import type { HeaderProps } from "@types";
+
+type Props = HeaderProps;
+
+const { siteLogo, navLinks } = Astro.props;
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 mx-auto flex max-w-5xl animate-fade-in justify-between bg-background/80 backdrop-blur-md px-5 py-6 transition-all duration-300"
+>
+  <a href="/" aria-label="Home link" class="hover:opacity-80 transition-opacity">
+    <Image
+      class="rounded-full border border-border"
+      src={siteLogo}
+      width="45"
+      height="45"
+      alt="website logo"
+    />
+  </a>
+
+  <button
+    type="button"
+    id="menu-button"
+    class="px-1.5 text-text-main sm:hidden"
+    aria-expanded="false"
+    aria-controls="main-menu"
+  >
+    <Menu />
+  </button>
+
+  <nav
+    class="absolute top-20 right-5 hidden rounded-xl border border-border bg-surface px-4 py-5 text-text-muted shadow-xl sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none"
+    id="main-menu"
+  >
+    <ul class="gap-2 sm:flex">
+      {
+        navLinks.map((link) => (
+          <li class="relative">
+            <a
+              class={`nav-item relative block p-2 text-sm font-medium transition-all duration-300 hover:text-text-main`}
+              href={link.href}
+            >
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  // Toggle mobile menu
+  const button = document.querySelector("#menu-button");
+  const menu = document.querySelector("#main-menu");
+  const navItems = document.querySelectorAll("#main-menu > ul > li > a");
+
+  const toggleMenu = () => {
+    menu?.classList.toggle("hidden");
+    const isHidden = menu?.classList.contains("hidden");
+    button?.setAttribute("aria-expanded", `${!isHidden}`);
+  };
+
+  button?.addEventListener("click", toggleMenu);
+  navItems.forEach((item) => {
+    item?.addEventListener("click", toggleMenu);
+  });
+
+  // Update navigation based on scroll position with Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("href") === `#${entry.target.id}`) {
+              item.classList.add("text-primary", "font-bold");
+            } else {
+              item.classList.remove("text-primary", "font-bold");
+            }
+          });
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  document.querySelectorAll("section").forEach((section) => {
+    observer.observe(section);
+  });
+</script>

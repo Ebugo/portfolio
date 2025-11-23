@@ -1,0 +1,100 @@
+---
+import Section from "@modules/core/Section.astro";
+import { SITE_CONTENT } from "@config";
+
+const { name } = SITE_CONTENT.hero;
+const firstName = name.split(" ")[0];
+---
+
+<style is:global>
+  /* Date outline stroke - adapts to theme */
+  #date-outline {
+    -webkit-text-stroke: 2px white;
+  }
+
+  .light #date-outline {
+    -webkit-text-stroke: 2px black;
+  }
+</style>
+
+<Section
+  class="relative flex min-h-screen flex-col justify-center px-6 pt-20 md:px-12 lg:px-24"
+>
+  <div class="relative mx-auto w-full max-w-[1600px]">
+    <!-- "Hello." Block -->
+    <div class="mb-2 animate-[fade-in_0.5s_ease-out_forwards] opacity-0">
+      <h1
+        class="font-display text-[12vw] leading-[0.9] font-bold tracking-tighter md:text-[10vw]"
+      >
+        Hello.
+      </h1>
+    </div>
+
+    <!-- "I am [Name]" Block -->
+    <div
+      class="relative animate-[slide-up_0.5s_ease-out_0.2s_forwards] opacity-0"
+    >
+      <h1
+        class="font-display text-[12vw] leading-[0.9] font-bold tracking-tighter whitespace-nowrap md:text-[10vw]"
+      >
+        I am {firstName}
+      </h1>
+
+      <!-- Role List (Positioned relative to the name) -->
+      <div
+        class="absolute top-full right-0 mt-4 flex items-start gap-4 text-right md:right-20 md:mt-0 md:text-left lg:right-40"
+      >
+        <div
+          class="hidden rotate-45 text-4xl font-light text-text-muted md:block md:text-6xl"
+        >
+          &darr;
+        </div>
+        <div
+          class="flex flex-col text-sm leading-snug font-bold tracking-wider text-text-muted uppercase md:text-xl"
+        >
+          <span>Fullstack Engineer</span>
+          <span>Writer</span>
+          <span>Speaker</span>
+          <span>Freelancer</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- "Available for work" Block -->
+    <div
+      class="mt-32 flex animate-[slide-up_0.5s_ease-out_0.4s_forwards] flex-col items-center opacity-0 md:mt-48 md:items-start"
+    >
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <!-- Outlined Date Style -->
+          <span
+            id="date-outline"
+            class="font-display text-6xl font-bold text-transparent md:text-8xl"
+          >
+            {new Date().getDate()}
+          </span>
+          <!-- Curved Line Decoration (SVG) -->
+          <svg
+            class="pointer-events-none absolute -bottom-12 -left-12 h-32 w-32 text-text-muted opacity-50"
+            viewBox="0 0 100 100"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+          >
+            <path d="M80,10 C20,10 10,80 10,90"></path>
+          </svg>
+        </div>
+        <div class="flex h-full flex-col justify-center pt-2">
+          <span class="text-xl font-bold tracking-widest uppercase md:text-2xl">
+            {new Date().toLocaleString("default", { month: "short" })}
+          </span>
+          <span
+            class="text-sm tracking-wide text-text-muted uppercase md:text-base"
+          >
+            available for work
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>

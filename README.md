@@ -1,0 +1,60 @@
+<h1 align="center">Hi there 👋, I'm Gospel</h1>
+
+<p align="center"><b>An experienced Full Stack Software Engineer with over half a decade of expertise in the banking and finance/fintech, health-tech, e-commerce, event tech, edutech, agrotech, and CRM industries. I bring a wealth of experience in development, advocacy, problem-solving and architecture design.
+ 
+<br/><br/>
+ 
+Gospel works as a Software Engineer for ALAT by Wema Bank, where he leads a team of awesome Engineers to effect updates on existing and new web projects. </b></p>
+
+
+- 🤔 Find out about my job experiences https://www.linkedin.com/in/gospel-chinyereugo/
+- 🥳 Take a peep at my portfolio https://ebugo.me, https://ebugo.vercel.app/
+- 😇 I write too https://blog.ebugo.me, https://gospelchinyereugo.hashnode.dev/
+
+
+#### Technologies and Tools
+
+<p align="left"> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://redux.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a> <a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> </p> 
+
+#### Learning
+
+<p>
+<img src ="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white"/>
+<img src ="https://img.shields.io/badge/Solidity-3C3C3D?style=for-the-badge&logo=Solidity&logoColor=white"/>
+<img src ="https://img.shields.io/badge/Smart Contract-3C3C3D?style=for-the-badge&logo=Smart Contract&logoColor=white"/>
+</p>
+
+
+#### Currently working at:
+
+- [Web Engineering Team Lead @ ALAT By Wema Bank](https://alat.ng/)
+- [Senior Frontend Engineer @ Clearprice](https://www.clearprice.xyz/) (Contract)
+
+
+#### Previously at:
+
+- [Senior Frontend Engineer / Tech Lead @ Outpost Health](https://www.outpost.health/) (Contract)
+- [Software Engineer @ Stanbic IBTC](https://www.stanbicibtcbank.com/)
+- [Senior Software Engineer @ Phreemedia Technology](https://www.phreetech.com/)
+
+  
+#### Volunteer Experience
+
+- [Community Lead, GDG Owerri](https://gdg.community.dev/gdg-owerri/) (Current)
+
+- [Influencer, Google Crowdsource](https://crowdsource.google.com/about/community/) (Current)
+
+- [Learning Community Ambassador, Andela / Meta Developer Circle](https://web.facebook.com/groups/325261998362175/)
+
+
+#### Projects
+
+- [Software Engineer @ Igbo API](https://igboapi.com/) (Open Source)
+- [Frontend Engineer @ Blockchainhub Africa Community](https://blockchainhub.africa/)
+
+#### Connect with me 🙃
+
+<p align="left">
+<a href="https://twitter.com/codebug_" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="codebug_" height="30" width="40" /></a>
+<a href="https://linkedin.com/in/gospel-chinyereugo" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="gospel-chinyereugo" height="30" width="40" /></a>
+</p>

@@ -269,7 +269,7 @@ export const SITE_CONTENT: SiteContent = {
         title: "Navigating the Mobile Development Space - My Journey",
         event: "Meet and Greet Navigating the Tech Space as a Newbie",
         date: "Nov 2025",
-        type: "Panel",
+        type: "AMA",
         link: "https://gdg.community.dev/events/details/google-gdg-owerri-presents-meet-and-greet-navigating-the-tech-space-as-a-newbie",
       },
     ],
